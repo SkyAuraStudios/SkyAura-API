@@ -4,7 +4,7 @@ const api = express();
 
 
 api.all('/', (req, res)=>{
-    console.log("REQUEST")
+    console.log(req.method + "AT: " + req.url)
 })
 
 api.listen(60621, ()=>{
