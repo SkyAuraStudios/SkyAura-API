@@ -4,10 +4,10 @@ const bodyParser = require('body-parser')
 const api = express();
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded())
+api.use(bodyParser.urlencoded())
 
 // parse application/json
-app.use(bodyParser.json())
+api.use(bodyParser.json())
 
 
 api.get('/api/globalvars/NCR_CONVERSION', (req, res)=>{
