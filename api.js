@@ -18,6 +18,10 @@ api.get('/api/globalvars/CDFT_CONVERSION', (req, res)=>{
     res.send({"ownerId":"GLOBAL","path":"CDFT_CONVERSION","value":"19.66930202","partitionKey":"GLOBAL","rowKey":"CDFT_CONVERSION","timestamp":"2021-11-29T10:47:34.2147849+00:00","eTag":"W/\"datetime'2021-11-29T10%3A47%3A34.2147849Z'\""})
 })
 
+api.post('/api/stats/instanceOnline/', (req, res)=>{
+    res.status(200);
+})
+
 
 
 api.all('*', (req, res)=>{
