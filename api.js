@@ -24,6 +24,8 @@ api.all('*', (req, res)=>{
     console.log(req.method + " REQUEST AT: " + req.url)
     if (req.method == "POST"){
         console.log(req.body);
+    }else{
+        console.log(req.body);
     }
 })
 
