@@ -18,7 +18,16 @@ api.get('/api/globalvars/CDFT_CONVERSION', (req, res)=>{
     res.send({"ownerId":"GLOBAL","path":"CDFT_CONVERSION","value":"19.66930202","partitionKey":"GLOBAL","rowKey":"CDFT_CONVERSION","timestamp":"2021-11-29T10:47:34.2147849+00:00","eTag":"W/\"datetime'2021-11-29T10%3A47%3A34.2147849Z'\""})
 })
 
-api.post('/api/stats/instanceOnline/', (req, res)=>{
+api.get('/api/sessions', (req, res)=>{
+    res.send([]);
+})
+
+
+
+
+
+api.post('/api/stats/instanceOnline/:machineID', (req, res)=>{
+    console.log(req.body);
     res.status(200);
 })
 
@@ -31,8 +40,10 @@ api.all('*', (req, res)=>{
     }else{
         console.log(req.body);
     }
+
+    res.status(400);
 })
 
-api.listen(60621, ()=>{
+api.listen(60612, ()=>{
 console.log("LOCAL API INSTANCE Running ON PORT 60621");
 })
