@@ -1,6 +1,13 @@
 const express =  require("express");
+const bodyParser = require('body-parser')
 
 const api = express();
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded())
+
+// parse application/json
+app.use(bodyParser.json())
 
 
 api.get('/api/globalvars/NCR_CONVERSION', (req, res)=>{
@@ -15,6 +22,9 @@ api.get('/api/globalvars/CDFT_CONVERSION', (req, res)=>{
 
 api.all('*', (req, res)=>{
     console.log(req.method + " REQUEST AT: " + req.url)
+    if (req.method == "POST"){
+        console.log(req.body);
+    }
 })
 
 api.listen(60621, ()=>{
